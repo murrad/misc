@@ -1,0 +1,37 @@
+{
+    "name": "battot/misc",
+    "description": "Miscellaneous classes",
+    "keywords": [
+        "bank holiday", "public holiday", "Easter", "Christmas", "Boxing Day"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Murrad Mohammed",
+            "email": "murrad_mohammed@yahoo.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Battot\\Misc\\": ["src"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Battot\\Misc\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
