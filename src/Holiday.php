@@ -19,7 +19,7 @@ class Holiday
      * @param integer $year default 1970
      * @return string date YYYY-MM-DD
      */
-    public static function getNewYearHoliday($year = 1970)
+    public static function getNewYearHoliday(int $year = 1970) : string
     {
         $holiday = "{$year}-01-01";
         $weekDay = date('D', strtotime($holiday));
@@ -43,7 +43,7 @@ class Holiday
      * @param integer $year default 1970
      * @return string date YYYY-MM-DD
      */
-    public static function getEasterSunday($year = 1970)
+    public static function getEasterSunday(int $year = 1970) : string
     {
         $A = $year % 19;
         $B = floor($year / 100);
@@ -72,7 +72,7 @@ class Holiday
      * @param integer $year default 1970
      * @return string date YYYY-MM-DD
      */
-    public static function getGoodFriday($year = 1970)
+    public static function getGoodFriday(int $year = 1970) : string
     {
         // Easter Sunday:
         $easterSunday = Self::getEasterSunday($year);
@@ -87,7 +87,7 @@ class Holiday
      * @param integer $year default 1970
      * @return string date YYYY-MM-DD
      */
-    public static function getEasterMonday($year = 1970)
+    public static function getEasterMonday(int $year = 1970) : string
     {
         // Easter Sunday:
         $easterSunday = Self::getEasterSunday($year);
@@ -102,7 +102,7 @@ class Holiday
      * @param integer $year default 1970
      * @return string date YYYY-MM-DD
      */
-    public static function getEarlyMayBankHoliday($year = 1970)
+    public static function getEarlyMayBankHoliday(int $year = 1970) : string
     {
         if ($year == 1995) {
             return '1995-05-08'; //50th anniversary year exception
@@ -143,7 +143,7 @@ class Holiday
      * @param integer $year default 1970
      * @return array of string (date YYYY-MM-DD)
      */
-    public static function getSpringBankHoliday($year = 1970)
+    public static function getSpringBankHoliday(int $year = 1970) : array
     {
         if ($year == 2002) { // 2002 exception year
             return ['2002-06-03', '2002-06-04'];
@@ -184,7 +184,7 @@ class Holiday
      * @param integer $year default 1970
      * @return string date YYYY-MM-DD
      */
-    public static function getSummerBankHoliday($year = 1970)
+    public static function getSummerBankHoliday(int $year = 1970) : string
     {
         $holiday = "{$year}-08-31";
 
@@ -220,7 +220,7 @@ class Holiday
      * @param integer $year default 1970
      * @return string date YYYY-MM-DD
      */
-    public static function getChristmasDayHoliday($year = 1970)
+    public static function getChristmasDayHoliday(int $year = 1970) : string
     {
         $holiday = "{$year}-12-25";
         $weekDay = date('D', strtotime($holiday));
@@ -241,7 +241,7 @@ class Holiday
      * @param integer $year default 1970
      * @return string date YYYY-MM-DD
      */
-    public static function getBoxingDayHoliday($year = 1970)
+    public static function getBoxingDayHoliday(int $year = 1970) : string
     {
         $holiday = "{$year}-12-26";
         $weekDay = date('D', strtotime($holiday));
@@ -262,7 +262,7 @@ class Holiday
      * @param integer $year default 1970
      * @return array of string (date YYYY-MM-DD)
      */
-    public static function getAllPublicAndBankHolidayByYear($year = 1970)
+    public static function getAllPublicAndBankHolidayByYear(int $year = 1970) : array
     {
         $holidays = [];
 
@@ -292,7 +292,7 @@ class Holiday
      * @param string $startDate default 1970-01-01
      * @return array of string (date YYYY-MM-DD)
      */
-    public static function calculateBankHolidays($startDate = '1970-01-01')
+    public static function calculateBankHolidays(string $startDate = '1970-01-01') : array
     {
         $holidays = [];
         $endDate = date('Y-m-d', strtotime("{$startDate} + 1 year - 1 day"));
