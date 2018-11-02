@@ -14,19 +14,19 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0"
+        "php": "^7"
     },
     "require-dev": {
         "phpunit/phpunit": "^7"
     },
     "autoload": {
         "psr-4": {
-            "Battot\\Misc\\": ["src"]
+            "Battot\\Misc\\": ["src/"]
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Battot\\Misc\\": "tests"
+            "Battot\\Misc\\": "tests/"
         }
     },
     "extra": {

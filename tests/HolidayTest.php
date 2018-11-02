@@ -22,14 +22,16 @@ class HolidayTest extends TestCase
     }
 
     /**
+     * @depends test_easter_sunday_date
      * @dataProvider  goodFridayTestProvider
      */
     public function test_good_friday_date($year, $date)
     {
         $this->assertEquals(Holiday::getGoodFriday($year), $date);
     }
-    
+
     /**
+     * @depends test_easter_sunday_date
      * @dataProvider  easterMondayTestProvider
      */
     public function test_easter_monday_date($year, $date)
@@ -78,6 +80,14 @@ class HolidayTest extends TestCase
     }
 
     /**
+     * @depends test_a_new_year_date
+     * @depends test_good_friday_date
+     * @depends test_easter_monday_date
+     * @depends test_early_may_bank_holiday_date
+     * @depends test_spring_bank_holiday_date
+     * @depends test_summer_bank_holiday_date
+     * @depends test_christmas_holiday_date
+     * @depends test_boxing_day_holiday_date
      * @dataProvider  allPublicBankHolidaysTestProvider
      */
     public function test_all_public_bank_holidays_date($year, $dates)
@@ -170,7 +180,7 @@ class HolidayTest extends TestCase
     {
         return [
             [
-                1985, 
+                1985,
                 [
                     '1985-01-01',
                     '1985-04-05',
@@ -183,7 +193,7 @@ class HolidayTest extends TestCase
                 ]
             ],
             [
-                2005, 
+                2005,
                 [
                     '2005-01-03',
                     '2005-03-25',
